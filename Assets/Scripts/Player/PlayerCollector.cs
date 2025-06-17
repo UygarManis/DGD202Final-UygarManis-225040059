@@ -2,15 +2,32 @@ using UnityEngine;
 
 public class PlayerCollector : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private AudioClip specialClip;
+
+    private int pelletCount = 0;
+    private AudioSource audioSource;
+
+    private void Awake()
     {
-        
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Pellet"))
+        {
+            Destroy(other.gameObject);
+            pelletCount++;
+
+            if (pelletCount == 3)
+            {
+                PlaySpecialSound();
+            }
+        }
+    }
+
+    private void PlaySpecialSound()
+    {
+        audioSource.PlayOneShot(specialClip);
     }
 }

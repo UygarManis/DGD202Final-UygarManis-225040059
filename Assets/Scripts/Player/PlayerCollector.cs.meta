@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 98f01552f9e46a948ba5d92398ca05c2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - specialClip: {fileID: 8300000, guid: a13967f5b66c4ca4ebeebbcac01decc4, type: 3}
+  - trailEffectPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
